@@ -1,12 +1,13 @@
-import { useRef, useEffect } from "react";
+import $ from "jquery";
+import { useEffect, useRef } from "react";
 import "./App.css";
+import { playerConfig } from "./data";
 import "./sunbird/styles.css";
 import "./sunbird/sunbird-quml-player";
-import { playerConfig } from "./data";
 
 function App() {
   const sunbirdQumlPlayerRef = useRef(null);
-  // window.jQuery = $;
+  window.jQuery = $;
   window.questionListUrl = "https://staging.sunbirded.org/api/question/v1/list";
   useEffect(() => {
     const playerElement = sunbirdQumlPlayerRef.current;

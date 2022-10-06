@@ -11,6 +11,9 @@
 
 - Create `.eslintignore` file if not exist and add `library` folder to avoid lint issues from the library files
 
+- Quml-libray uses `jQuery`, install and import it in the component.
+`npm i jquery --save`
+
 - Assign jQuery and questionListUrl to window object
 
 - Use `sunbird-quml-player` and pass the input as given in the example
