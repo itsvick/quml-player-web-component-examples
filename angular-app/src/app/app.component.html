@@ -1,0 +1,5 @@
+<router-outlet></router-outlet>
+
+<div class="container">
+  <sunbird-quml-player [playerConfig]="playerConfig" (playerEvent)="onPlayerEvent($event)" (telemetryEvent)="onTelemetryEvent($event)"></sunbird-quml-player>
+</div>
