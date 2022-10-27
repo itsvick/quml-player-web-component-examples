@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the quml-player
-        run: git clone https://github.com/project-sunbird/sunbird-quml-player/tree/release-5.2.0
+        run: git clone git@github.com:project-sunbird/sunbird-quml-player.git
+      - name: Checkout to latest branch
+        run: cd sunbird-quml-player && git checkout release-5.2.0
       - name: Install dependencies 
         run: yarn && cd projects/quml-library yarn
       - name: Build Library and Web component
