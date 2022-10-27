@@ -11,5 +11,12 @@ jobs:
   clone-and-build-web-component:
     runs-on: ubuntu-latest
     steps:
-      - name: Starting
-        run: echo "Hello I'm working"
+      - name: Clone the quml-player
+        run: git clone https://github.com/project-sunbird/sunbird-quml-player/tree/release-5.2.0
+      - name: Install dependencies 
+        run: yarn && cd projects/quml-library yarn
+      - name: Build Library and Web component
+        run:  npm run build-web-component
+      - name: See directory
+        run: ls ./dist/
+
