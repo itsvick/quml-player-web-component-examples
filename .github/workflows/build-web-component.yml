@@ -20,7 +20,8 @@ jobs:
         run: |
           cd sunbird-quml-player && git checkout release-5.2.0
           npm install && cd projects/quml-library && npm install
-          cd .. && npm run build-web-component
+          cd ..
+          npm run build-web-component
           ls
       # - name: Install dependencies 
       # - name: Build Library and Web component
