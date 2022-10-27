@@ -17,17 +17,28 @@ jobs:
           node-version: 14
       - name: Clone the quml-player
         run: git clone https://github.com/project-sunbird/sunbird-quml-player.git
-      # - name: Checkout to latest branch
-      #   run: |
-      #     cd sunbird-quml-player && git checkout release-5.2.0
-      #     npm install && cd projects/quml-library && npm install
-      #     cd ..
-      #     npm run build-web-component
-      #     cd .. && ls
+      - name: Checkout to latest branch
+        run: |
+          cd sunbird-quml-player && git checkout release-5.2.0
+          npm install && cd projects/quml-library && npm install
+          cd ..
+          npm run build-web-component
+          cd .. && ls
       - name: Copy web-component files to Angular Project
         run: |
           rsync -av --progress --exclude 'assets' sunbird-quml-player/web-component/ angular-app/src/assets/sunbird/
           rsync -av --progress sunbird-quml-player/web-component/assets/ angular-app/src/assets/
+      - name: Copy web-component files to React app
+        run: |
+          rsync -av --progress sunbird-quml-player/web-component/assets/ react-app/public/assets/
+          rsync -av --progress --exclude 'assets' sunbird-quml-player/web-component/ react-app/src/sunbird/
+      - name: Copy web-component files to vanilla app
+        run: |
+          rsync -av --progress sunbird-quml-player/web-component/ vanilla-js/
+      - name: Copy web-component files to Vue app
+        run: |
+          rsync -av --progress sunbird-quml-player/web-component/assets/ vue-app/public/assets/
+          rsync -av --progress --exclude 'assets' sunbird-quml-player/web-component/ vue-app/src/assets/sunbird/
       - name: Remove sunbird-quml-player
         run: rm -rf ./sunbird-quml-player
       - uses: stefanzweifel/git-auto-commit-action@v4
