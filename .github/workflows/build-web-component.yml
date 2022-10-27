@@ -22,7 +22,7 @@ jobs:
           npm install && cd projects/quml-library && npm install
           cd ..
           npm run build-web-component
-          ls
+          cd .. ls
       # - name: Install dependencies 
       # - name: Build Library and Web component
       # - name: See directory
