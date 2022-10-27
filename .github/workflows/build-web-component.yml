@@ -30,7 +30,6 @@ jobs:
           cp sunbird-quml-player/web-component/assets/*.* angular-app/src/assets/
       - name: Remove sunbird-quml-player
         run: rm -rf ./sunbird-quml-player
-      - name: Commit changes
       - uses: stefanzweifel/git-auto-commit-action@v4
         with: 
           commit_message: "[Bot] Update web-component files!"
