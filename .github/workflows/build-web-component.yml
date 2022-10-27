@@ -11,6 +11,9 @@ jobs:
   clone-and-build-web-component:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
       - name: Clone the quml-player
         run: node -v
       #   run: git clone https://github.com/project-sunbird/sunbird-quml-player.git
