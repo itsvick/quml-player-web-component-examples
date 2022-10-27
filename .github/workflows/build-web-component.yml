@@ -14,11 +14,12 @@ jobs:
       - name: Clone the quml-player
         run: git clone https://github.com/project-sunbird/sunbird-quml-player.git
       - name: Checkout to latest branch
-        run: cd sunbird-quml-player && git checkout release-5.2.0
-      - name: Install dependencies 
-        run: npm install && cd projects/quml-library && npm install
-      - name: Build Library and Web component
-        run:  npm run build-web-component
-      - name: See directory
-        run: ls ./dist/
+        run: |
+          cd sunbird-quml-player && git checkout release-5.2.0
+          npm install && cd projects/quml-library && npm install
+          npm run build-web-component
+          ls ./dist/
+      # - name: Install dependencies 
+      # - name: Build Library and Web component
+      # - name: See directory
 
