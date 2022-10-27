@@ -38,7 +38,8 @@ jobs:
       - name: Copy web-component files to Vue app
         run: |
           rsync -av --progress sunbird-quml-player/web-component/assets/ vue-app/public/assets/
-          rsync -av --progress --exclude 'assets' sunbird-quml-player/web-component/ vue-app/src/assets/sunbird/
+          rsync -av --progress --exclude 'assets' --exclude 'sunbird-quml-player.js' sunbird-quml-player/web-component/ vue-app/src/assets/sunbird/
+          rsync -av --progress sunbird-quml-player/web-component/sunbird-quml-player.js vue-app/src/
       - name: Remove sunbird-quml-player
         run: rm -rf ./sunbird-quml-player
       - uses: stefanzweifel/git-auto-commit-action@v4
