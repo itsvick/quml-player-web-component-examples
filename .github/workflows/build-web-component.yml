@@ -24,5 +24,5 @@ jobs:
       #     npm run build-web-component
       #     cd .. && ls
       - name: Copy web-component files to Angular Project
-        run: cp sunbird-quml-player/web-component/*.* angular-app/src/app/assets/sunbird/*
+        run: ls
 
