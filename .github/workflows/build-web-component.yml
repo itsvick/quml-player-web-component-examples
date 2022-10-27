@@ -16,7 +16,7 @@ jobs:
       - name: Checkout to latest branch
         run: cd sunbird-quml-player && git checkout release-5.2.0
       - name: Install dependencies 
-        run: yarn && cd projects/quml-library yarn
+        run: npm install && cd projects/quml-library npm install
       - name: Build Library and Web component
         run:  npm run build-web-component
       - name: See directory
